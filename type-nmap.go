@@ -71,7 +71,7 @@ func (n *Nmap) Scan(ip string, port int) (status Status, response *Response) {
 
 	firstProbe := probeNames[0]
 	status, response = n.getRealResponse(ip, port, n.timeout, firstProbe)
-	if status == Closed || status == Matched {
+	if status == Matched {
 		return status, response
 	}
 	otherProbes := probeNames[1:]
